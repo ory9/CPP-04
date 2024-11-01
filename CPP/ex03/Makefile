@@ -1,12 +1,9 @@
-NAME = animal
+NAME = interface
 
-SRC = 	srcs/Animal.cpp \
-		srcs/Cat.cpp \
-		srcs/Dog.cpp \
-		srcs/WrongAnimal.cpp \
-		srcs/WrongCat.cpp \
-		srcs/Brain.cpp \
-		srcs/main.cpp
+SRC = 	srcs/AMateria.cpp \
+		srcs/ICharacter.cpp \
+		srcs/MateriaSource.cpp \
+		srcs/main.cpp 
 
 HEADER = include/
 
