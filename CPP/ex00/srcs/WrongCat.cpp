@@ -1,19 +1,14 @@
 
-#include "WrongCat.hpp"
+#include "../include/WrongCat.hpp"
 
 //============ Constructor Start ============
 WrongCat::WrongCat()
 {
-    this->type = "WrongCat";
+    setType("WrongCat");
     std::cout <<"WrongCat Default Constructor called" <<std::endl;
 }
 
-WrongCat::WrongCat(std::string name)
-{
-    std::cout << name << "Parameterized Constructor called " << std::endl;
-}
-
-WrongCat::WrongCat(WrongCat const & WrongCat): WrongAnimal(WrongCat.type)
+WrongCat::WrongCat(WrongCat const & WrongCat)
 {
     std::cout<<"Copy Constructor called" <<std::endl;
     *this = WrongCat;
@@ -31,7 +26,7 @@ WrongCat & WrongCat::operator = (WrongCat const & src)
 {
     if (this != &src)
     {
-        this->type = src.type;
+        this->type = src.getType();
     }
     return *this;
 }

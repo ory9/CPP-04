@@ -1,15 +1,10 @@
 
-#include "Animal.hpp"
+#include "../include/Animal.hpp"
 
 //============ Constructor Start ============
-Animal::Animal(): type("unamed")
+Animal::Animal(): type("Unamed")
 {
-    std::cout<<"Animal Default Constructor called" <<std::endl;
-}
-
-Animal::Animal(std::string name): type("unamed")
-{
-    std::cout <<name << " Parameterized Constructor called " << std::endl;
+    std::cout <<"Animal Default Constructor called" <<std::endl;
 }
 
 Animal::Animal(Animal const & cat){
@@ -29,16 +24,20 @@ Animal & Animal::operator = (Animal const & src)
 {
     if (this != &src)
     {
-        this->type = src.type;
+        this->type = src.getType();
     }
     return *this;
 }
 //============ Copy Assigment Operator End ============
 
 //============ Member Functions Start ============
-std::string  Animal::getType() const
+string  Animal::getType() const
 {
-    return type;
+    return this->type;
+}
+
+void Animal::setType(string name){
+    this->type = name;
 }
 
 void Animal::makeSound() const{

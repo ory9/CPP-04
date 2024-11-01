@@ -1,6 +1,5 @@
-
-#include "Animal.hpp"
-#include "Dog.hpp"
+#include "../include/Animal.hpp"
+#include "../include/Dog.hpp"
 
 //============ Constructor Start ============
 Dog::Dog()
@@ -9,12 +8,7 @@ Dog::Dog()
     std::cout <<"Dog Default Constructor called" <<std::endl;
 }
 
-Dog::Dog(std::string name){
-    setType("Dog");
-    std::cout <<name <<" Dog Parameterized Constructor called" <<std::endl;
-}
-
-Dog::Dog(Dog const & Dog): Animal()
+Dog::Dog(Dog const & Dog): Animal(Dog)
 {
     std::cout<<"Copy Constructor called" <<std::endl;
     *this = Dog;
@@ -32,7 +26,7 @@ Dog & Dog::operator = (Dog const & src)
 {
     if (this != &src)
     {
-        this->type = src.type;
+        this->type = src.getType();
     }
     return *this;
 }
@@ -43,12 +37,10 @@ void Dog::makeSound() const{
     std::cout << "*** Dogs make deep, rumbling barking Sound ***" << std::endl;
 }
 
-void Dog::setType(std::string name){
-    this->type = name;
+string Dog::getIdea(int index) const{
+    return this->DogBrain->getIdea(index);
 }
-
-std::string  Dog::getType() const
-{
-    return this->type;
+void Dog::setIdea(int index, string idea){
+    this->DogBrain->setIdea(index, idea);
 }
 //============ Member Functions End ============

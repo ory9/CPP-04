@@ -1,19 +1,15 @@
 
-#include "Animal.hpp"
-#include "Cat.hpp"
+#include "../include/Animal.hpp"
+#include "../include/Cat.hpp"
 
 //============ Constructor Start ============
-Cat::Cat(): type("Cat")
+Cat::Cat()
 {
+    setType("Cat");
     std::cout <<"Cat Default Constructor called" <<std::endl;
 }
 
-Cat::Cat(std::string name): type("Cat")
-{
-    std::cout <<name <<"Cat Parameterized Constructor called" <<std::endl;
-}
-
-Cat::Cat(Cat const & cat): Animal()
+Cat::Cat(Cat const & cat): Animal(cat)
 {
     std::cout<<"Copy Constructor called" <<std::endl;
     *this = cat;
@@ -31,7 +27,7 @@ Cat & Cat::operator = (Cat const & src)
 {
     if (this != &src)
     {
-        this->type = src.type;
+        this->type = src.getType();
     }
     return *this;
 }
@@ -40,10 +36,5 @@ Cat & Cat::operator = (Cat const & src)
 //============ Member Functions Start ============
 void Cat::makeSound() const{
     std::cout << "*** Cats make meows  Sound ***" << std::endl;
-}
-
-std::string  Cat::getType() const
-{
-    return this->type;
 }
 //============ Member Functions End ============

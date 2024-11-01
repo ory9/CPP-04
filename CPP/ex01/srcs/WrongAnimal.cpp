@@ -1,5 +1,5 @@
-
-#include "WrongAnimal.hpp"
+#include "../include/Animal.hpp"
+#include "../include/WrongAnimal.hpp"
 
 //============ Constructor Start ============
 WrongAnimal::WrongAnimal() : type("unamed")
@@ -7,12 +7,7 @@ WrongAnimal::WrongAnimal() : type("unamed")
     std::cout<<"WrongAnimal Default Constructor called" <<std::endl;
 }
 
-WrongAnimal::WrongAnimal(std::string name)
-{
-    std::cout <<name << "Parameterized Constructor called " << std::endl;
-}
-
-WrongAnimal::WrongAnimal(WrongAnimal const & cat) : type(cat.type)
+WrongAnimal::WrongAnimal(WrongAnimal const & cat)
 {
     std::cout<<"Copy Constructor called" <<std::endl;
 }
@@ -29,16 +24,20 @@ WrongAnimal & WrongAnimal::operator = (WrongAnimal const & src)
 {
     if (this != &src)
     {
-        this->type = src.type;
+        this->type = src.getType();
     }
     return *this;
 }
 //============ Copy Assigment Operator End ============
 
 //============ Member Functions Start ============
-std::string  WrongAnimal::getType() const
+string  WrongAnimal::getType() const
 {
     return type;
+}
+
+void WrongAnimal::setType(string name){
+    this->type = name;
 }
 
 void WrongAnimal::makeSound() const{
