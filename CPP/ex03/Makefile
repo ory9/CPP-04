@@ -3,6 +3,8 @@ NAME = interface
 SRC = 	srcs/AMateria.cpp \
 		srcs/ICharacter.cpp \
 		srcs/MateriaSource.cpp \
+		srcs/Cure.cpp \
+		srcs/Ice.cpp \
 		srcs/main.cpp 
 
 HEADER = include/
