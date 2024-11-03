@@ -16,6 +16,7 @@ MateriaSource::~MateriaSource(){
 }
 
 void MateriaSource::learnMateria(AMateria* p){
+    AMateria *p = new Ice();
     std::cout << "MateriaSource: use function Called" <<std::endl;
 }
 
