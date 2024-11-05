@@ -1,19 +1,16 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include "ICharacter.hpp"
-
-using std::string;
+#include "AMateria.hpp"
 
 class Ice : public AMateria{
 private:
-    string _name;
+    std::string _name;
 public:
     Ice();
     Ice(const Ice & src);
     ~Ice();
     Ice & operator = (const Ice & src);
-    void setName(string name);
-    string getName() const;
+    void setName(std::string name);
+    std::string getName() const;
+    AMateria* clone() const;
     void use(ICharacter& target);
 };

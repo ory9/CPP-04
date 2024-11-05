@@ -1,10 +1,10 @@
 #include "../include/Ice.hpp"
 
-Ice::Ice(): _name("Unamed"){
+Ice::Ice() : _name("Unamed"), AMateria(){
     std::cout << "Ice Default Constructor is Called." << std::endl;
 }
 
-Ice::Ice(const Ice & src){
+Ice::Ice(const Ice & src): AMateria(src){
     *this = src;
 }
 
@@ -14,24 +14,22 @@ Ice::~Ice(){
 
 Ice &Ice::operator = (const Ice & src){
     if (this != &src)
-    {
         this->_name = src._name;
-    }
     return *this;
 }
 
-void Ice::setName(string name){
+void Ice::setName(std::string name){
     _name = name;
 }
 
-string Ice::getName() const{
+std::string Ice::getName() const{
     return _name;
 }
 
 void Ice::use(ICharacter & obj){
-    std::cout << "Ice:" << "* heals "<< _name<<" wounds *" << std::endl;
+    std::cout << "* shoots an ice bolt at "<< obj.getName() <<" *" << std::endl;
 }
 
-// AMateria* clone() const {
-//     return AMateria;
-// }
+AMateria* Ice::clone() const{
+    return new Ice(*this);
+}

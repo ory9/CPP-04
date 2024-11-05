@@ -1,20 +1,21 @@
 #include "../include/AMateria.hpp"
 
-AMateria::AMateria(std::string const & type){
-    _type = type;
-    std::cout << "AMateria Parameterized Constructor Called" <<std::endl;
+AMateria::AMateria(){
+    std::cout << "AMateria Default Constructer is Called" << std::endl;
 }
 
-AMateria::AMateria(){
-    std::cout << "AMateria Constructor Called" <<std::endl;
+AMateria::AMateria(std::string const & type){
+    _type = type;
+    std::cout << "AMateria Parameterized Constructer is Called" << std::endl;
 }
 
 AMateria::AMateria(const AMateria & src){
     *this = src;
+    std::cout << "AMateria Copy Constructer is Called" << std::endl;
 }
 
 AMateria::~AMateria(){
-    std::cout << "AMateria DeConstructor Called" <<std::endl;
+    std::cout << "AMateria Destructer is Called" << std::endl;
 }
 
 AMateria &AMateria::operator = (const AMateria & src){
@@ -24,11 +25,7 @@ AMateria &AMateria::operator = (const AMateria & src){
     }
     return *this;
 }
-    
+
 std::string const & AMateria::getType() const{
     return this->_type;
-}
-
-void use(ICharacter& target){
-    std::cout << "Default Value Printed" << std::endl;
 }

@@ -1,6 +1,7 @@
 #pragma once
+#include <string>
+#include <iostream>
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 
 class IMateriaSource
 {
@@ -17,8 +18,9 @@ public:
     MateriaSource(const MateriaSource &src);
     virtual ~MateriaSource();
     virtual void learnMateria(AMateria*);
+    void printMateria() const;
     virtual AMateria* createMateria(std::string const & type);
 private:
-    string      _type;
-    AMateria*   _loc[4];
+    int         _size;
+    AMateria*   _arr[4];
 };

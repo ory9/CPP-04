@@ -1,19 +1,16 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include "ICharacter.hpp"
+#include "AMateria.hpp"
 
-using std::string;
-
-class Cure : public AMateria{
+class Cure : public AMateria {
 private:
-    string _name;
+    std::string _name;
 public:
     Cure();
     Cure(const Cure & src);
+    void setName(std::string name);
     ~Cure();
     Cure & operator = (const Cure & src);
-    void setName(string name);
-    string getName() const;
+    std::string const & getType() const; //Returns the materia type
+    AMateria* clone() const;
     void use(ICharacter& target);
-};
+};          

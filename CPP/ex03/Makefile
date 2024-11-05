@@ -1,7 +1,7 @@
 NAME = interface
 
-SRC = 	srcs/AMateria.cpp \
-		srcs/ICharacter.cpp \
+SRC =	srcs/Character.cpp \
+		srcs/AMateria.cpp \
 		srcs/MateriaSource.cpp \
 		srcs/Cure.cpp \
 		srcs/Ice.cpp \
