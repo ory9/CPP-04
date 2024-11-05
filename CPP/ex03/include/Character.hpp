@@ -16,6 +16,6 @@ public:
     void use(int idx, ICharacter& target);
 private:
     std::string      _name;
-    int             _idx;
+    int              _idx;
     AMateria        *_inv[4];
 };

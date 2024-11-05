@@ -2,7 +2,7 @@
 #include "../include/ICharacter.hpp"
 #include "../include/AMateria.hpp"
 
-Character::Character(): _name("Unamed"), _idx(0){
+Character::Character(): _name("unamed"), _idx(0){
     std::cout << "Character: Default Constructor Called" <<std::endl;
 }
 
@@ -31,7 +31,6 @@ Character &Character::operator = (const Character & src){
 Character::Character(std::string name): _name(name){
     for (int i = 0; i < 4; i++)
         this->_inv[i] = NULL;
-    std::cout << "Character: Parameterized Constructor is called" <<std::endl;
 }
 
 Character::Character(const Character &src){
@@ -73,7 +72,11 @@ void Character::unequip(int idx){
 
 void Character::use(int idx, ICharacter& target){
     if (idx >= 0 && idx < this->_idx)
-        this->_inv[idx]->use(target);
+   {
+        std::cout <<getName() << std::endl;
+         // this->_inv[idx]->use(target);
+   
+   }
     else
     {   
         std::cout << "Error: Occurred in Use" << std::endl;

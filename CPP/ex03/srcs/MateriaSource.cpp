@@ -30,9 +30,9 @@ MateriaSource &MateriaSource::operator = (const MateriaSource & src){
 }
 
 MateriaSource::~MateriaSource(){
-    std::cout << "MateriaSource: use function Called" <<std::endl;
     for (int i = 0; i < _size; i++)
         delete this->_arr[i];
+    std::cout << "MateriaSource: Destructor Called" <<std::endl;
 }
 
 void MateriaSource::learnMateria(AMateria* p){
